@@ -23,4 +23,19 @@ RSpec.describe Enigma do
     expect(@enigma.key).to be_a(String)
   end
 
+  it 'returns the same date when provided' do
+    @enigma.date_check("040895")
+    expect(@enigma.date).to eql("040895")
+    expect(@enigma.date).to be_a(String)
+  end
+
+  it 'generates a new date when date is not provided' do
+    @enigma.date_check(nil)
+    expect(@enigma.date).not_to eql(nil)
+    expect(@enigma.date).to be_a(String)
+    expect(@enigma.date.length).to eql(6)
+  end
+
+
+
 end
