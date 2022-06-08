@@ -9,4 +9,14 @@ module Creatable
     @date.gsub!('/', '').to_s[-4..-1]
   end
 
+  def generate_alphabet
+    @alphabet = Hash[('a'..'z').to_a.zip((1..26).to_a)]
+    @alphabet[" "] = 27
+  end
+
+  def generate_shifts
+    
+  end
+
+
 end
