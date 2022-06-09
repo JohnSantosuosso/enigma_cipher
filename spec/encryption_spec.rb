@@ -12,7 +12,6 @@ RSpec.describe Encryption do
 
   it 'is an instance of Encryption' do
     expect(@enigma.encryption).to be_instance_of(Encryption)
-    expect(@encryption).to be_instance_of(Encryption)
   end
 
   it 'receives a message when initialized' do
@@ -20,17 +19,27 @@ RSpec.describe Encryption do
   end
 
   before(:each) do
-    @encryption.message = [8, 5, 12, 12, 15, 27, 23, 15, 18, 12, 4]
-    @encryption.shifts = [2, 9, 8, 6]
-    @encryption = Encryption.new(@encryption.message,@encryption.shifts )
+    @encryption1 = Encryption.new([8, 5, 12, 12, 15, 27, 23, 15, 18, 12, 4],[2, 9, 8, 6] )
   end
 
   it 'is an instance of Encryption' do
-    expect(@encryption).to be_instance_of(Encryption)
+    expect(@encryption1).to be_instance_of(Encryption)
   end
 
   it 'declares a new variable that contains the grouped formatted message' do
+    @encryption1.add_shifts
+    expect(@encryption1.formatted_message).to eql([[8, 5, 12, 12], [15, 27, 23, 15], [18, 12, 4]])
+  end
 
+  it 'maps the shifts to the formatted message' do
+    @encryption1.formatted_message = [[8, 5, 12, 12], [15, 27, 23, 15], [18, 12, 4]]
+    @encryption1.map_shifts_to_characters
+    expect(@encryption1.formatted_message).to eql([10, 14, 20, 18, 17, 36, 31, 21, 20, 21, 12])
+  end
+
+  it 'accounts for values greater than 27' do
+    @encryption1.formatted_message = [[8, 5, 12, 12], [15, 27, 23, 15], [18, 12, 4]]
+    @encryption1.map_shifts_to_characters
   end
 
   # xit 'is an instance of Encryption' do

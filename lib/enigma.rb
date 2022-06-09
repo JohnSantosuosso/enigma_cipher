@@ -19,7 +19,7 @@ class Enigma
     generate_message(message)
     generate_shifts
     initiate_encryption
-    #@encryption.add_shifts #left off working on encryption methods
+    #@encryption.add_shifts
     #@encryption.finish
   end
 
