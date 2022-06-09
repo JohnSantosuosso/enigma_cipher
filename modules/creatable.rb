@@ -1,5 +1,4 @@
 module Creatable
-
 #Key creatables
   def generate_key(key)
     key.nil? == true ? generate_new_key : @key = key
@@ -25,9 +24,13 @@ module Creatable
     @alphabet[" "] = 27
   end
 
+
+#left off here
 #Message creatables
-def generate_message
-  @message
+def generate_message(message)
+  generate_alphabet
+  split_message = message.downcase.chars
+  @message = split_message.map! {|letter| @alphabet[letter]}
 end
 
 #Shift creatables
