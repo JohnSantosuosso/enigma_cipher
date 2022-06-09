@@ -36,10 +36,36 @@ RSpec.describe Encryption do
     @encryption1.map_shifts_to_characters
     expect(@encryption1.formatted_message).to eql([10, 14, 20, 18, 17, 36, 31, 21, 20, 21, 12])
   end
+  [2, 9, 8, 6]
+  it 'accounts for values greater than 27' do
+    @encryption1.formatted_message = [[8, 5, 12, 12], [15, 27, 23, 15], [18, 12, 4]]
+    @encryption1.map_shifts_to_characters
+    @encryption1.format_numbers_outside_alphanumeric_range
+    expect(@encryption1.formatted_message).to eql([10, 14, 20, 18, 17, 9, 4, 21, 20, 21, 12])
+  end
 
   it 'accounts for values greater than 27' do
     @encryption1.formatted_message = [[8, 5, 12, 12], [15, 27, 23, 15], [18, 12, 4]]
     @encryption1.map_shifts_to_characters
+    @encryption1.format_numbers_outside_alphanumeric_range
+    expect(@encryption1.formatted_message).to eql([10, 14, 20, 18, 17, 9, 4, 21, 20, 21, 12])
+  end
+
+  it 'maps alpha numeric location to alphabet' do
+    @encryption1.formatted_message = [[8, 5, 12, 12], [15, 27, 23, 15], [18, 12, 4]]
+    @encryption1.map_shifts_to_characters
+    @encryption1.format_numbers_outside_alphanumeric_range
+    @encryption1.map_alpha_numeric_location_to_alphabet
+    expect(@encryption1.formatted_message).to eql(["j", "n", "t", "r", "q", "i", "d", "u", "t", "u", "l"])
+  end
+
+  it 'turns formatted message array into a single string' do
+    @encryption1.formatted_message = [[8, 5, 12, 12], [15, 27, 23, 15], [18, 12, 4]]
+    @encryption1.map_shifts_to_characters
+    @encryption1.format_numbers_outside_alphanumeric_range
+    @encryption1.map_alpha_numeric_location_to_alphabet
+    @encryption1.convert_formatted_message_to_string
+    expect(@encryption1.final_message_form).to eql("jntrqidutul")
   end
 
   # xit 'is an instance of Encryption' do

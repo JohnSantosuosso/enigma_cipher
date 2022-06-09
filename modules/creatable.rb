@@ -36,11 +36,12 @@ end
     keys = []
     @key.chars.each_cons(2){|num| keys << num}
     dates = (@date.to_i ** 2).to_s[-4..-1].chars
+    keys.map! {|key| key.join}
     dates.map!{|date| date.to_i}
-    keys.map!{|key| key.map!{|nums| nums.to_i}}
-    keys.map!{|key| key.sum}
+    keys.map!{|key| key.to_i}
     @shifts = keys.zip(dates)
     @shifts.map!{|shift| shift.sum}
+    require "pry"; binding.pry
   end
 
 end
