@@ -24,8 +24,6 @@ module Creatable
     @alphabet[" "] = 27
   end
 
-
-#left off here
 #Message creatables
 def generate_message(message)
   generate_alphabet
@@ -33,7 +31,7 @@ def generate_message(message)
   @message = split_message.map! {|letter| @alphabet[letter]}
 end
 
-#Shift creatables
+#Shift creatables--break this method up
   def generate_shifts
     keys = []
     @key.chars.each_cons(2){|num| keys << num}
@@ -41,8 +39,8 @@ end
     dates.map!{|date| date.to_i}
     keys.map!{|key| key.map!{|nums| nums.to_i}}
     keys.map!{|key| key.sum}
-    @shift = keys.zip(dates)
-    @shift.map!{|shift| shift.sum}
+    @shifts = keys.zip(dates)
+    @shifts.map!{|shift| shift.sum}
   end
 
 end
