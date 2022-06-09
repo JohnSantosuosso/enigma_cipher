@@ -39,9 +39,9 @@ RSpec.describe Enigma do
 
   it 'generates a shift from a key' do
     @enigma.key = "02715"
-    @enigma.date = "011000"
+    @enigma.date = "040895"
     @enigma.generate_shifts
-    expect(@enigma.shifts).to eql([2, 9, 8, 6])
+    expect(@enigma.shifts).to eql([3, 27, 73, 20])
     expect(@enigma.shifts).to be_a(Array)
   end
 
@@ -56,9 +56,8 @@ RSpec.describe Enigma do
     expect(@enigma.encryption).to be_instance_of(Encryption)
   end
 
-#incomplete but test as you go
-  xit 'encrypts a message' do
-    expect(@enigma.encrypt("Hello World","02715","011000")).to eql([2, 9, 8, 6])
+  it 'encrypts a message' do
+    expect(@enigma.encrypt("hello world", "02715", "040895")).to eql({:date=>"040895", :encrypt=>"keder ohulw", :key=>"02715"})
   end
 
 end
