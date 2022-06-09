@@ -1,4 +1,5 @@
 require './lib/enigma'
+require './lib/encryption'
 
 RSpec.describe Enigma do
   before(:each) do
@@ -40,14 +41,24 @@ RSpec.describe Enigma do
     @enigma.key = "02715"
     @enigma.date = "011000"
     @enigma.generate_shifts
-    expect(@enigma.shift).to eql([2, 9, 8, 6])
-    expect(@enigma.shift).to be_a(Array)
+    expect(@enigma.shifts).to eql([2, 9, 8, 6])
+    expect(@enigma.shifts).to be_a(Array)
   end
 
-  it 'generates a message from a message' do
+  it 'generates the numeric index of each character in a message from a message' do
     @enigma.generate_message("Hello World")
     expect(@enigma.message).to eql([8, 5, 12, 12, 15, 27, 23, 15, 18, 12, 4])
     expect(@enigma.message).to be_a(Array)
+  end
+
+  it 'initiates the Encryption class' do
+    @enigma.initiate_encryption
+    expect(@enigma.encryption).to be_instance_of(Encryption)
+  end
+
+#incomplete but test as you go
+  xit 'encrypts a message' do
+    expect(@enigma.encrypt("Hello World","02715","011000")).to eql([2, 9, 8, 6])
   end
 
 end
