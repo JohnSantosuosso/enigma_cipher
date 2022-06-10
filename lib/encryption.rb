@@ -17,8 +17,8 @@ class Encryption
     generate_formatted_message
     map_encrypt_shifts_to_characters
     format_numbers_outside_alphanumeric_range
-    map_alpha_numeric_location_to_alphabet
-    convert_formatted_message_to_string
+    generate_alphanumeric_replacements
+    generate_final_message_form
   end
 
   def map_encrypt_shifts_to_characters
@@ -35,20 +35,6 @@ class Encryption
       else
         number
       end}
-  end
-
-  def map_alpha_numeric_location_to_alphabet
-    generate_alphabet
-    @formatted_message = @formatted_message.map! {|number| @alphabet.key(number)}
-  end
-
-  def convert_formatted_message_to_string
-    @formatted_message.map!{|x|x.nil? ? " ":x}
-    @final_message_form = @formatted_message.join
-  end
-
-  def finish
-    @final_message_form
   end
 
 end

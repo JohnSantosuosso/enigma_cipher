@@ -55,7 +55,7 @@ RSpec.describe Encryption do
     @encryption1.formatted_message = [[8, 5, 12, 12], [15, 27, 23, 15], [18, 12, 4]]
     @encryption1.map_encrypt_shifts_to_characters
     @encryption1.format_numbers_outside_alphanumeric_range
-    @encryption1.map_alpha_numeric_location_to_alphabet
+    @encryption1.generate_alphanumeric_replacements
     expect(@encryption1.formatted_message).to eql(["j", "n", "t", "r", "q", "i", "d", "u", "t", "u", "l"])
   end
 
@@ -63,8 +63,17 @@ RSpec.describe Encryption do
     @encryption1.formatted_message = [[8, 5, 12, 12], [15, 27, 23, 15], [18, 12, 4]]
     @encryption1.map_encrypt_shifts_to_characters
     @encryption1.format_numbers_outside_alphanumeric_range
-    @encryption1.map_alpha_numeric_location_to_alphabet
-    @encryption1.convert_formatted_message_to_string
+    @encryption1.generate_alphanumeric_replacements
+    @encryption1.generate_final_message_form
+    expect(@encryption1.final_message_form).to eql("jntrqidutul")
+  end
+
+  it 'turns formatted message array into a single string' do
+    @encryption1.formatted_message = [[8, 5, 12, 12], [15, 27, 23, 15], [18, 12, 4]]
+    @encryption1.map_encrypt_shifts_to_characters
+    @encryption1.format_numbers_outside_alphanumeric_range
+    @encryption1.generate_alphanumeric_replacements
+    @encryption1.generate_final_message_form
     expect(@encryption1.final_message_form).to eql("jntrqidutul")
   end
 

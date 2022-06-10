@@ -35,6 +35,16 @@ def generate_formatted_message
   @formatted_message = @message.each_slice(4).to_a
 end
 
+def generate_final_message_form
+  @formatted_message.map!{|x|x.nil? ? " ":x}
+  @final_message_form = @formatted_message.join
+end
+
+def generate_alphanumeric_replacements
+  generate_alphabet
+  @formatted_message = @formatted_message.map! {|number| @alphabet.key(number)}
+end
+
 #Shift creatables
   def generate_shifts
     keys = []

@@ -21,7 +21,7 @@ class Enigma
     generate_shifts
     initiate_encryption
     @encryption.run_encryption_on_message
-    @encrypted_message = @encryption.finish
+    @encrypted_message = @encryption.final_message_form
     @encrypted = {encryption: @encrypted_message, key: @key, date: @date}
     @encrypted
   end
@@ -33,9 +33,9 @@ class Enigma
     generate_shifts
     initiate_decryption
     @decryption.run_decryption_on_message
-    @decrypted_message = @decryption.finish
-    output = {decrypt: @decrypted_message, key: @key, date: @date}
-    output
+    @decrypted_message = @decryption.final_message_form
+    @decrypted = {decrypt: @decrypted_message, key: @key, date: @date}
+    @decrypted
   end
 
   def initiate_encryption
