@@ -22,6 +22,7 @@ class Encryption
     convert_formatted_message_to_string
   end
 
+
   def add_shifts
     @formatted_message = @message.each_slice(4).to_a
   end
@@ -48,6 +49,7 @@ class Encryption
   end
 
   def convert_formatted_message_to_string
+    @formatted_message.map!{|x|x.nil? ? " ":x}
     @final_message_form = @formatted_message.join
   end
 
