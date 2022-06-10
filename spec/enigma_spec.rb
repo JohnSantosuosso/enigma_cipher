@@ -64,4 +64,19 @@ RSpec.describe Enigma do
     expect(@enigma.decrypt("keder ohulw", "02715", "040895")).to eql({:date=>"040895", :decryption=> "hello world", :key=>"02715"})
   end
 
+#Need mocks/subs for all of the following below:
+
+  xit 'encrypts a message with todays date' do
+    expect(@enigma.decrypt("keder ohulw", "02715")).to eql({:date=>"040895", :decryption=> "hello world", :key=>"02715"})
+  end
+
+  xit 'encrypts a message with todays date' do
+    expect(@enigma.encrypt("hello world", "02715")).to eql({:date=>"040895", :encryption=>"keder ohulw", :key=>"02715"})
+  end
+
+  xit 'encrypts a message with no key or date' do
+    expect(@enigma.encrypt("hello world")).to eql({:date=>"040895", :encryption=>"keder ohulw", :key=>"02715"})
+  end
+
+
 end
