@@ -36,7 +36,7 @@ RSpec.describe Encryption do
     @encryption1.map_shifts_to_characters
     expect(@encryption1.formatted_message).to eql([10, 14, 20, 18, 17, 36, 31, 21, 20, 21, 12])
   end
-  [2, 9, 8, 6]
+
   it 'accounts for values greater than 27' do
     @encryption1.formatted_message = [[8, 5, 12, 12], [15, 27, 23, 15], [18, 12, 4]]
     @encryption1.map_shifts_to_characters
@@ -67,11 +67,5 @@ RSpec.describe Encryption do
     @encryption1.convert_formatted_message_to_string
     expect(@encryption1.final_message_form).to eql("jntrqidutul")
   end
-
-  # xit 'is an instance of Encryption' do
-  #   @message = [8, 5, 12, 12, 15, 27, 23, 15, 18, 12, 4]
-  #   @encryption.run_encryption([8, 5, 12, 12, 15, 27, 23, 15, 18, 12, 4], "040895")
-  #   expect(@encryption.alphabet.count).to eql(27)
-  # end
 
 end
