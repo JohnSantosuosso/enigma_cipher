@@ -14,4 +14,16 @@ RSpec.describe Decryption do
     expect(@enigma.decryption).to be_instance_of(Decryption)
   end
 
+  before(:each) do
+    @decryption1 = Decryption.new([8, 5, 12, 12, 15, 27, 23, 15, 18, 12, 4],[2, 9, 8, 6] )
+  end
+
+  it 'maps the shifts to the formatted message' do
+    @decryption1.formatted_message = [[8, 5, 12, 12], [15, 27, 23, 15], [18, 12, 4]]
+    @decryption1.map_shifts_to_characters
+    expect(@decryption1.formatted_message).to eql([6, -4, 4, 6, 13, 18, 15, 9, 16, 3, -4])
+  end
+
+
+
 end

@@ -4,7 +4,7 @@ require_relative 'encryption'
 class Enigma
   include Creatable
 
-  attr_accessor :key, :date, :shifts, :message, :encryption, :encrypted_message, :decryption, :decrypted_message
+  attr_accessor :key, :date, :shifts, :message, :encryption, :encrypted_message, :decryption, :decrypted_message, :encrypted, :decrypted
 
   def initialize
     @key = key
@@ -21,8 +21,8 @@ class Enigma
     initiate_encryption
     @encryption.run_encryption_on_message
     @encrypted_message = @encryption.finish
-    output = {encrypt: @encrypted_message, key: @key, date: @date}
-    output
+    @encrypted = {encryption: @encrypted_message, key: @key, date: @date}
+    @encrypted
   end
 
   def decrypt(message, key=nil, date=nil)
