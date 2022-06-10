@@ -34,7 +34,7 @@ class Enigma
     initiate_decryption
     @decryption.run_decryption_on_message
     @decrypted_message = @decryption.final_message_form
-    @decrypted = {decrypt: @decrypted_message, key: @key, date: @date}
+    @decrypted = {decryption: @decrypted_message, key: @key, date: @date}
     @decrypted
   end
 
