@@ -31,7 +31,7 @@ def generate_message(message)
   @message = split_message.map! {|letter| @alphabet[letter]}
 end
 
-#Shift creatables--break this method up
+#Shift creatables
   def generate_shifts
     keys = []
     @key.chars.each_cons(2){|num| keys << num}
@@ -41,7 +41,6 @@ end
     keys.map!{|key| key.to_i}
     @shifts = keys.zip(dates)
     @shifts.map!{|shift| shift.sum}
-    require "pry"; binding.pry
   end
 
 end
