@@ -1,5 +1,6 @@
 require_relative '../modules/creatable'
 require_relative 'encryption'
+require_relative 'decryption'
 
 class Enigma
   include Creatable

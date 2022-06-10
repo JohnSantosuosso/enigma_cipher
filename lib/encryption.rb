@@ -14,19 +14,14 @@ class Encryption
   end
 
   def run_encryption_on_message
-    add_shifts
-    map_shifts_to_characters
+    generate_formatted_message
+    map_encrypt_shifts_to_characters
     format_numbers_outside_alphanumeric_range
     map_alpha_numeric_location_to_alphabet
     convert_formatted_message_to_string
   end
 
-
-  def add_shifts
-    @formatted_message = @message.each_slice(4).to_a
-  end
-
-  def map_shifts_to_characters
+  def map_encrypt_shifts_to_characters
     @formatted_message = @formatted_message.map! {|message| message.zip(@shifts)}.flatten(1).map! {|values| values.sum}
   end
 

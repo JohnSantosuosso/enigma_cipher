@@ -31,6 +31,10 @@ def generate_message(message)
   @message = split_message.map! {|letter| @alphabet[letter]}
 end
 
+def generate_formatted_message
+  @formatted_message = @message.each_slice(4).to_a
+end
+
 #Shift creatables
   def generate_shifts
     keys = []
