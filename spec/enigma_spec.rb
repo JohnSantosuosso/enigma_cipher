@@ -47,7 +47,7 @@ RSpec.describe Enigma do
 
   it 'generates the numeric index of each character in a message from a message' do
     @enigma.generate_message("Hello World")
-    expect(@enigma.message).to eql([8, 5, 12, 12, 15, 0, 23, 15, 18, 12, 4])
+    expect(@enigma.message).to eql([8, 5, 12, 12, 15, 27, 23, 15, 18, 12, 4])
     expect(@enigma.message).to be_a(Array)
   end
 
