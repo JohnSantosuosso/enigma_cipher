@@ -22,7 +22,9 @@ class Encryption
   end
 
   def map_encrypt_shifts_to_characters
-    @formatted_message = @formatted_message.map! {|message| message.zip(@shifts)}.flatten(1).map! {|values| values.sum}
+    @formatted_message = @formatted_message.map! {|message| message.zip(@shifts)}.flatten(1)
+    @formatted_message.map! {|set| set.include?(nil) ? [0, 0]: set}
+    @formatted_message.map! {|values| values.sum}
   end
 
   def format_numbers_outside_alphanumeric_range

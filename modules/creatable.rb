@@ -21,7 +21,7 @@ module Creatable
 #Alphabet creatables
   def generate_alphabet
     @alphabet = Hash[('a'..'z').to_a.zip((1..26).to_a)]
-    @alphabet[" "] = 27
+    @alphabet[nil] = 27
   end
 
 #Message creatables

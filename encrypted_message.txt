@@ -1,1 +1,1 @@
-WELCOME TO ENIGMA
+{:encryption=>"keder ohulw keder ohulw keder ohulw", :key=>"02715", :date=>"040895"}
