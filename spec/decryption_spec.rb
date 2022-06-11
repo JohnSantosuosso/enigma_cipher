@@ -40,14 +40,14 @@ RSpec.describe Decryption do
   end
 
   it 'accounts for negative values' do
-    @decryption1.formatted_message = [[8, 5, 12, 12], [15, 27, 23, 15], [18, 12, 4]]
-    @decryption2.formatted_message = [[8, 5, 12, "!"], [15, 27, ",", 15],[18, "!", 4]]
+    @decryption1.formatted_message = [[8, 5, -12, 12], [15, -270, 23, 15], [-18, 12, 4]]
+    @decryption2.formatted_message = [[8, 5, -12, "!"], [15, -270, ",", 15],[-18, "!", 4]]
     @decryption1.map_decrypt_shifts_to_characters
     @decryption1.format_negative_numbers
     @decryption2.map_decrypt_shifts_to_characters
     @decryption2.format_negative_numbers
-    expect(@decryption1.formatted_message).to eql([6, 23, 4, 6, 13, 18, 15, 9, 16, 3, 23])
-    expect(@decryption2.formatted_message).to eql([6, 23, 4, "!", 13, 18, ",", 9, 16, "!", 23])
+    expect(@decryption1.formatted_message).to eql([6, 23, 7, 6, 13, 18, 15, 9, 7, 3, 23])
+    expect(@decryption2.formatted_message).to eql([6, 23, 7, "!", 13, 18, ",", 9, 7, "!", 23])
     expect(@decryption1.formatted_message.class).to eql(Array)
     expect(@decryption2.formatted_message.class).to eql(Array)
   end
