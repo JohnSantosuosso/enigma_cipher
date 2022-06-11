@@ -20,19 +20,18 @@ class Decryption
   end
 
   def map_decrypt_shifts_to_characters
-    @formatted_message = @formatted_message.map! {|message| message.zip(@shifts)}.flatten(1).map! {|values| values[0]-values[1]}
+    @formatted_message = @formatted_message.map! {|message| message.zip(@shifts)}.flatten(1)
+    @formatted_message.map! {|values| values[0]-values[1] }
   end
 
   def format_negative_numbers
-    @formatted_message = @formatted_message.map!{|number|
-      if number < 0
-          while number <= 0
-          number += 27
-          end
-        number
+    @formatted_message = @formatted_message.map! do |number|
+      if number < 1
+        number%27
       else
         number
-      end}
+      end
+    end
   end
 
 end

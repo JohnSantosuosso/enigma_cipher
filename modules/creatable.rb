@@ -24,11 +24,15 @@ module Creatable
     @alphabet[" "] = 27
   end
 
+  def generate_alphabet_array
+    @alphabet_array = ("a".."z").to_a << " "
+  end
+
 #Message creatables
 def generate_message(message)
   generate_alphabet
-  split_message = message.downcase.chars
-  @message = split_message.map! {|letter| @alphabet[letter]}
+  @message = message.downcase.chars
+  @message.map! {|letter| @alphabet[letter]}
 end
 
 def generate_formatted_message
