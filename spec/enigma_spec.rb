@@ -47,7 +47,7 @@ RSpec.describe Enigma do
 
   it 'generates the numeric index of each character in a message from a message' do
     @enigma.generate_message("Hello World")
-    expect(@enigma.message).to eql([8, 5, 12, 12, 15, 27, 23, 15, 18, 12, 4])
+    expect(@enigma.message).to eql([8, 5, 12, 12, 15, 0, 23, 15, 18, 12, 4])
     expect(@enigma.message).to be_a(Array)
   end
 
@@ -56,15 +56,20 @@ RSpec.describe Enigma do
     expect(@enigma.encryption).to be_instance_of(Encryption)
   end
 
-  it 'encrypts a message' do
+  it 'encrypts a message with a key and date' do
     expect(@enigma.encrypt("hello world", "02715", "040895")).to eql({:date=>"040895", :encryption=>"keder ohulw", :key=>"02715"})
   end
 
-  it 'decrypts a message' do
+  it 'decrypts a message with a key and date' do
     expect(@enigma.decrypt("keder ohulw", "02715", "040895")).to eql({:date=>"040895", :decryption=> "hello world", :key=>"02715"})
   end
 
-#Need mocks/subs for all of the following below:
+  it 'decrypts a message with todays date' do
+    expect(@enigma.decrypt("mj mt en il nup tgc","24701","061122")).to eql({:key=>"24701", :date=>"061122", :decryption=> "hi ho hi ho its off"})
+    expect(@enigma.decrypt("nq bu kc pr oav uni","25498","061122")).to eql({:key=>"25498", :date=>"061122", :decryption=> "hi ho hi ho its off"})
+    expect(@enigma.decrypt("pl yw wz kc qwg wiu","27613","061122")).to eql({:key=>"27613", :date=>"061122", :decryption=> "hi ho hi ho its off"})
+  end
+
 
   xit 'encrypts a message with todays date' do
     expect(@enigma.decrypt("keder ohulw", "02715")).to eql({:date=>"040895", :decryption=> "hello world", :key=>"02715"})

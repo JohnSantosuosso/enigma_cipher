@@ -21,14 +21,15 @@ module Creatable
 #Alphabet creatables
   def generate_alphabet
     @alphabet = Hash[('a'..'z').to_a.zip((1..26).to_a)]
-    @alphabet[nil] = 27
+    @alphabet[nil] = nil
   end
+
 
 #Message creatables
 def generate_message(message)
   generate_alphabet
-  split_message = message.downcase.chars
-  @message = split_message.map! {|letter| @alphabet[letter]}
+  @message = message.downcase.chars
+  @message.map! {|letter| @alphabet[letter]}
 end
 
 def generate_formatted_message
@@ -43,6 +44,7 @@ end
 def generate_alphanumeric_replacements
   generate_alphabet
   @formatted_message = @formatted_message.map! {|number| @alphabet.key(number)}
+  require "pry"; binding.pry
 end
 
 #Shift creatables

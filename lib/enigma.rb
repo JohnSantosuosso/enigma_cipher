@@ -15,9 +15,9 @@ class Enigma
   end
 
   def encrypt(message, key=nil, date=nil)
-    generate_key(@key)
-    generate_date(@date)
-    generate_message(@message)
+    generate_key(key)
+    generate_date(date)
+    generate_message(message)
     generate_shifts
     initiate_encryption
     @encryption.run_encryption_on_message
