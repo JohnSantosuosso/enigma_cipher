@@ -28,7 +28,7 @@ RSpec.describe Decryption do
     expect(@decryption2.formatted_message.class).to eql(Array)
   end
 
-  it 'maps the shifts to the formatted message' do
+  it 'maps the shifts passed to the object to the formatted message' do
     @decryption1.formatted_message = [[8, 5, 12, 12], [15, 27, 23, 15], [18, 12, 4]]
     @decryption2.formatted_message = [[8, 5, 12, "!"], [15, 27, ",", 15],[18, "!", 4]]
     @decryption1.map_decrypt_shifts_to_characters
@@ -39,7 +39,7 @@ RSpec.describe Decryption do
     expect(@decryption2.formatted_message.class).to eql(Array)
   end
 
-  it 'accounts for negative values' do
+  it 'reformats negative numbers after mapping to shifts' do
     @decryption1.formatted_message = [[8, 5, -12, 12], [15, -270, 23, 15], [-18, 12, 4]]
     @decryption2.formatted_message = [[8, 5, -12, "!"], [15, -270, ",", 15],[-18, "!", 4]]
     @decryption1.map_decrypt_shifts_to_characters
@@ -67,7 +67,7 @@ RSpec.describe Decryption do
     expect(@decryption2.formatted_message.class).to eql(Array)
   end
 
-  it 'turns formatted message array into a single string' do
+  it 'turns formatted message array into a string' do
     @decryption1.formatted_message = [[8, 5, 12, 12], [15, 27, 23, 15], [18, 12, 4]]
     @decryption2.formatted_message = [[8, 5, 12, "!"], [15, 27, ",", 15],[18, "!", 4]]
     @decryption1.map_decrypt_shifts_to_characters
