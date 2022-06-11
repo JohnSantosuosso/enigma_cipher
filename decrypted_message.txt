@@ -1,1 +1,1 @@
-{:decryption=>"hello world i am enigma", :key=>"02715", :date=>"040895"}
+{:decryption=>"hello world this is enigma i encrypt messages", :key=>"02715", :date=>"040895"}
