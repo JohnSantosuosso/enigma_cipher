@@ -48,4 +48,4 @@ class Enigma
 
 end
 
-#require "pry"; binding.pry
+require "pry"; binding.pry
