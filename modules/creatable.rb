@@ -24,30 +24,32 @@ module Creatable
     @alphabet[" "] = 27
   end
 
-  def generate_alphabet_array
-    @alphabet_array = ("a".."z").to_a << " "
+#Message creatables
+  def generate_message(message)
+    generate_alphabet
+    @message = message.downcase.chars
+    @message.map! do |letter|
+      if @alphabet.has_key?(letter)
+        @alphabet[letter]
+      else
+        @alphabet[letter] = letter
+      end
+    end
   end
 
-#Message creatables
-def generate_message(message)
-  generate_alphabet
-  @message = message.downcase.chars
-  @message.map! {|letter| @alphabet[letter]}
-end
+  def generate_formatted_message
+    @formatted_message = @message.each_slice(4).to_a
+  end
 
-def generate_formatted_message
-  @formatted_message = @message.each_slice(4).to_a
-end
+  def generate_final_message_form
+    @formatted_message.map!{|x|x.nil? ? " ":x}
+    @final_message_form = @formatted_message.join
+  end
 
-def generate_final_message_form
-  @formatted_message.map!{|x|x.nil? ? " ":x}
-  @final_message_form = @formatted_message.join
-end
-
-def generate_alphanumeric_replacements
-  generate_alphabet
-  @formatted_message = @formatted_message.map! {|number| @alphabet.key(number)}
-end
+  def generate_alphanumeric_replacements
+    generate_alphabet
+    @formatted_message = @formatted_message.map! {|number| number.class == Integer ? @alphabet.key(number) : number}
+  end
 
 #Shift creatables
   def generate_shifts
