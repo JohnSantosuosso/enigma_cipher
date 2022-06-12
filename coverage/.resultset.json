@@ -70,19 +70,6 @@
           1,
           null,
           null,
-          1,
-          0,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          null,
           null
         ]
       },
@@ -136,9 +123,7 @@
           8,
           null,
           null,
-          null,
-          null,
-          1
+          null
         ]
       },
       "/Users/johnsantosuosso/enigma_final_redo/modules/creatable.rb": {
@@ -471,6 +456,6 @@
         ]
       }
     },
-    "timestamp": 1654995267
+    "timestamp": 1655052276
   }
 }
