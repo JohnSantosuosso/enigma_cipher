@@ -1,4 +1,4 @@
-## H2 Self Assessment
+## Self Assessment
 
 **Functionality**
 **3/4**
