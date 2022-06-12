@@ -47,5 +47,3 @@ class Enigma
   end
 
 end
-
-require "pry"; binding.pry
