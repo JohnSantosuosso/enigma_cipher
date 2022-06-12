@@ -1,4 +1,4 @@
-require_relative '../modules/creatable'
+#require_relative '../modules/creatable'
 require_relative 'enigma'
 
 class Encryption
