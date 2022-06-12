@@ -27,6 +27,8 @@ reader.close
 
 output_date = output_text[-7..-1][0..-3]
 output_key = output_text[-30..-1][0..-20][-5..-1]
+
+
 time = Time.now.strftime("%d/%m/%Y %H:%M")
 
 puts "Created #{ARGV[1]} at #{time} with the key #{output_key} and the date #{output_date}."
