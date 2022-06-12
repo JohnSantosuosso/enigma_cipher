@@ -23,15 +23,15 @@ class Encryption
 
   def map_encrypt_shifts_to_characters
     @formatted_message = @formatted_message.map! {|message| message.zip(@shifts)}.flatten(1)
-    @formatted_message.map! {|values| values.sum}
+    @formatted_message.map! {|values| values[0].class == Integer ? values.sum : values[0]}
   end
 
   def format_numbers_outside_alphanumeric_range
     @formatted_message = @formatted_message.map! do |number|
-      if number > 27
-        number%27
-      else
-        number
+    if number.class == Integer && number > 27
+      number%27
+    else
+      number
       end
     end
   end

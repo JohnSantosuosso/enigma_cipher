@@ -62,14 +62,8 @@ RSpec.describe Enigma do
 
   it 'decrypts a message with a key and date' do
     expect(@enigma.decrypt("keder ohulw", "02715", "040895")).to eql({:date=>"040895", :decryption=> "hello world", :key=>"02715"})
+    expect(@enigma.decrypt("keder ohulwtl tfcefbjmttdnwtl xgfrqiw teo qhxrsfhskujek","02715","040895")).to eql({:key=>"02715", :date=>"040895", :decryption=> "hello world i am enigma and i encrypt all your messages"})
   end
-
-  it 'decrypts a message with todays date' do
-    expect(@enigma.decrypt("mj mt en il nup tgc","24701","061122")).to eql({:key=>"24701", :date=>"061122", :decryption=> "hi ho hi ho its off"})
-    expect(@enigma.decrypt("nq bu kc pr oav uni","25498","061122")).to eql({:key=>"25498", :date=>"061122", :decryption=> "hi ho hi ho its off"})
-    expect(@enigma.decrypt("pl yw wz kc qwg wiu","27613","061122")).to eql({:key=>"27613", :date=>"061122", :decryption=> "hi ho hi ho its off"})
-  end
-
 
   xit 'encrypts a message with todays date' do
     expect(@enigma.decrypt("keder ohulw", "02715")).to eql({:date=>"040895", :decryption=> "hello world", :key=>"02715"})
