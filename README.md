@@ -17,7 +17,7 @@ I considered inheritance with the encryption and decryption classes (inheritance
 ### Ruby Convention and Mechanics
 #### 3.5/4
 
-My method and class names clearly define the purpose of that class/method.  For example-```map_encrypt_shifts_to_characters``` or ```map_decrypt_shifts_to_characters``` explicitly explains that the shifts are being mapped to the characters of a message.  I was able to avoid using **each** throughout this entire project except in conjunction with ```each_slice``` or ```each_cons``` for formatting messages or shifts in a specific way.  There are no methods longer than 10 lines.
+My method and class names clearly define the purpose of that class/method.  For example-```map_encrypt_shifts_to_characters``` or ```map_decrypt_shifts_to_characters``` explicitly explains that the shifts are being mapped to the characters of a message.  I was able to avoid using ```each``` throughout this entire project except in conjunction with ```each_slice``` or ```each_cons``` for formatting messages or shifts in a specific way.  There are no methods longer than 10 lines.
 
 ### Test Driven Development
 #### 2.5/4
