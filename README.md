@@ -1,7 +1,4 @@
-# enigma_final_redo
-Project Final Mod 1 Turing
-
-Self Assessment
+##Self Assessment##
 
 **Functionality**
 **3/4**
