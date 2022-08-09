@@ -26,8 +26,24 @@ Enigma is a Command Line Interface(CLI) app built entirely in Ruby that utilizes
 
      ```$code```
      
- 6. **Encrypt your message.** 
+ 6. **Write your message to be encrypted.** 
       
       Locate the ```message.txt``` file inside the project.  Enter the message you wish to encrypt.
       
       <img width="350" alt="enigma" src="https://user-images.githubusercontent.com/95776577/183780200-c6789f6e-3963-4315-8455-9c96a7021053.png">
+      
+ 7. **Navigate to your terminal while located inside the project directory.  Run encryption by calling the encrypt class.** 
+      
+       ```$ ruby ./lib/encrypt.rb message.txt encrypted.txt```
+       
+       You should receive a message indicating the message has been encrypted:
+       ```Created encrypted.txt at 09/08/2022 19:46 with the key 61950 and the date 80922.```
+       
+ 7. **Open the encrypted.txt file inside the project.  Your message is now encrypted. If no key or date was provided, they are auto-generated.** 
+ 
+       <img width="375" alt="enigma2" src="https://user-images.githubusercontent.com/95776577/183781010-b7098ed7-4731-48ee-8232-e88d95557961.png">
+ 
+ 8.  **To decrypt the message, use the terminal to call the decrypt class and view decrypted.txt.  The program will automatically extract the key and      date from the encrypted.txt file.** 
+     
+     ```$ ruby ./lib/decrypt.rb encrypted.txt decrypted.txt```
+       
