@@ -43,7 +43,7 @@ Enigma is a Command Line Interface(CLI) app built entirely in Ruby that utilizes
  
        <img width="375" alt="enigma2" src="https://user-images.githubusercontent.com/95776577/183781010-b7098ed7-4731-48ee-8232-e88d95557961.png">
  
- 8.  **To decrypt the message, use the terminal to call the decrypt class and view decrypted.txt.  The program will automatically extract the key and      date from the encrypted.txt file.** 
+ 8.  **To decrypt the encrypted file, use the terminal to call the decrypt class and view decrypted.txt.  The program will automatically extract the key and      date from the encrypted.txt file.** 
      
      ```$ ruby ./lib/decrypt.rb encrypted.txt decrypted.txt```
        
