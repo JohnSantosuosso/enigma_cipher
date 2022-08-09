@@ -29,4 +29,5 @@ Enigma is a Command Line Interface(CLI) app built entirely in Ruby that utilizes
  6. **Encrypt your message.** 
       
       Locate the ```message.txt``` file inside the project.  Enter the message you wish to encrypt.
+      
       <img width="350" alt="enigma" src="https://user-images.githubusercontent.com/95776577/183780200-c6789f6e-3963-4315-8455-9c96a7021053.png">
