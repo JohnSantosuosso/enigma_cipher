@@ -1,23 +1,31 @@
-## Self Assessment
+## Enigma Cipher
 
-### Functionality
-Enigma Class with encrypt and decrypt methods successfully implemented. Encrypt/decrypt command line interfaces successfully implemented.  I added the date/time when the files are created via CLI well.
+Enigma is a Command Line Interface(CLI) app built entirely in Ruby that utilizes RSpec and TDD to provide the user with the option to encrypt a message, which can later be decrypted after the encrypted message is read from a text file. The cipher itself is built partially off of the famous 'Caesar Cipher,' with additional encryption measures and character shifts added to increase the complexity of the encryption pattern.
 
-### Object Oriented Programming
-Once I tested and built the encryption features and class, I realized decryption would work essentially the same way, except for two parts. I also noticed that both encryption and decryption required the same values(dates, keys, shifts) that were created time and time again, therefore I built a module named ```creatables.rb``` and tapped into that anytime a value being generated could be used by both encryption and decryption.
+**_Getting Started_**
 
-I considered making separate classes for shifts, keys, dates, and offsets, but it seemed like that would be unnecessary because it would require more and more class object instantiation.  A module also made much more sense to me and kept classes from getting unneccesarily large.  I could have created separate modules for keys, dates, etc. but the ```creatables.rb``` purpose for me was to simply to create( or generate) values that are used elsewhere in the program.
+ 1.  **Create a new directory on your computer where you'd like the program to live** 
 
-I considered inheritance with the encryption and decryption classes (inheritance from enigma) but generally thought of my encryption and decryption classes as **features** of enigma, versus ```is_a?``` a type of enigma.
+     ```mkdir /Users/your_user_name/your_folder/enigma_cipher```
+  
+ 2.  **Navigate into the recently created directory** 
 
-### Ruby Convention and Mechanics
-My method and class names clearly define the purpose of that class/method.  For example-```map_encrypt_shifts_to_characters``` or ```map_decrypt_shifts_to_characters``` explicitly explains that the shifts are being mapped to the characters of a message.  I was able to avoid using ```each``` throughout this entire project except in conjunction with ```each_slice``` or ```each_cons``` for formatting messages or shifts in a specific way.  There are no methods longer than 10 lines.
+     ```/Users/your_user_name/your_folder  $cd enigma_cipher ```
+  
+ 3.  **Clone the repository by clicking on the code button on Github repo page. Then, copy the repo information using SSH.**
 
-### Test Driven Development
-Mocks/Stubs accounting for randomness were not implemented.  Edge cases such as special characters were tested.  Every method was tested (**simple cov score - 99%**).  Although not ideal, several of my tests (inside Encryption and Decryption specs) required multiple steps that built on each other.  Therefore, I had to put several methods inside of one test.  Additionally, there was one method inside ```creatables.rb``` called ```generate_shifts``` that I could not break apart into smaller tests (and perhaps smaller methods).  I was able to use pry to determine the method was doing what I wanted it to do but could not figure out how to integrate that into TDD.  When I tested this method, I knew what I wanted the end result to be and received it but could not break the test apart to get each individual step.  This also occurred with two other methods that used multiple enumerables.  Again, I wrote the test and knew what I wanted the end result to be but couldn't break the test apart although I did use pry to check the steps.
+     ![183747041-40f47875-442e-4008-8d00-8c45bf2731fe](https://user-images.githubusercontent.com/95776577/183752233-c9130b38-ce16-4b4c-aeb4-fdf0d0d4a137.png)
 
-### Version Control
-70 commits, 10 pull requests
 
-I began this project with lackluster version control but soon realized that breaking it apart into branches and frequently committing allowed me to roll back when I went a direction that led nowhere.  I did this several times--a particularly useful time was when I tried to build out a cli and somehow broke my Enigma class.  I ended up getting rid of the branch I was on, pulled the previous version of the project from Github, and reopened a new branch.  There was another point in the project when I realized I was not building the CLI the way Turing wanted me to so I reverted back to a previous commit using ```git reset```.
+  
+ 4.  **Inside the recently created directory, clone the recently copied repository information** 
 
+      ```$git clone git@github.com:JohnSantosuosso/enigma_cipher.git```
+
+ 5. **Open the repository in your preferred IDE.  If you are using VSCode, use the code command shown below.** 
+
+     ```$code```
+     
+ 6. **Encrypt your message.** 
+      Locate the ```message.txt``` file inside the project.  Enter the message you wish to encrypt.
+      <img width="350" alt="enigma" src="https://user-images.githubusercontent.com/95776577/183780200-c6789f6e-3963-4315-8455-9c96a7021053.png">
