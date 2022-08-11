@@ -37,6 +37,7 @@ Enigma is a Command Line Interface(CLI) app built entirely in Ruby that utilizes
        ```$ ruby ./lib/encrypt.rb message.txt encrypted.txt```
        
        You should receive a message indicating the message has been encrypted:
+       
        ```Created encrypted.txt at 09/08/2022 19:46 with the key 61950 and the date 80922.```
        
  7. **Open the encrypted.txt file inside the project.  Your message is now encrypted. If no key or date was provided, they are auto-generated.** 
