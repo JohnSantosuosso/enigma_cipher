@@ -2,7 +2,7 @@
 
 **Enigma** is a Command Line Interface(CLI) app built in **Ruby**. This app provides the user with the ability to encrypt a message which can later be decrypted when the encrypted message is read from a text file and processed.
 
-The cipher is partially based on the ***Caesar Cipher***, but uses additional character shifts from a custom encryption method based on both key and date.  If a key and date is not provided, the program will automatically generate both.
+The cipher is partially based on the ***Caesar Cipher***, but uses an additional encryption process based on the user-provided key and date.  If the user chooses not to provide a key or date, the program will automatically generate either or both.
 
 <!-- TABLE OF CONTENTS -->
 <h2 id="table-of-contents"> :book: Table of Contents</h2>
