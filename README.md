@@ -10,6 +10,7 @@ The cipher is partially based on the ***Caesar Cipher***, but uses an additional
 <details open="open">
   <summary>Table of Contents</summary>
   <ol>
+    <li><a href="#techical-requirements"> ➤ Technical Requirements</a></li>
     <li><a href="#project-files-description"> ➤ Project Files Description</a></li>
     <li><a href="#getting-started"> ➤ Getting Started</a></li>
     <li><a href="#scenario1"> ➤ Scenario 1: Encrypting a Message (no date and key provided) </a></li>
@@ -20,6 +21,12 @@ The cipher is partially based on the ***Caesar Cipher***, but uses an additional
   </ol>
 </details>
 
+<!-- TECHNICAL REQUIREMENTS -->
+<h2 id="techical-requirements"> 💻 Technical Requirements</h2>
+<ul>
+  <li>Ruby 2.7.4</li>
+  <li>RSpec 3.11</li></ul>
+   
 <!-- PROJECT FILES DESCRIPTION -->
 <h2 id="project-files-description"> :floppy_disk: Project Files Description</h2>
 
