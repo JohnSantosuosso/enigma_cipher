@@ -129,7 +129,7 @@ The cipher is partially based on the ***Caesar Cipher***, but uses an additional
 <pre><code>$ ruby ./lib/encrypt.rb message.txt encrypted.txt 080922</code></pre>
 <li>Note the CLI message indicating encryption was successful.</li>
 <pre><code>$ Created encrypted.txt at 09/08/2022 19:46 with the key 82648 and the date 80922.</code></pre>
-<p><i>NoteThe program randomly generates a key since a key was not provided.</i></p>
+<p><i>The program randomly generates a key since a key was not provided.</i></p>
 <li>Open <b>encrypted.txt</b> inside the project and view the encrypted message.</li></ul>
 
 <!-- CREDITS -->
